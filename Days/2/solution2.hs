@@ -13,6 +13,8 @@ safeReport xs = all (\a -> signsMatch d a && abs a < 4 && a /= 0) (d:ds)
     where (d:ds) = diffs xs
 
 
+-- Function to try safeReport on all sub lists missing one element
+
 main = 
     print . length . filter safeReport . map (map readInt . words) . lines =<< readFile "input.txt" 
 
